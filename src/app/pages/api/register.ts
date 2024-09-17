@@ -19,8 +19,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { username} = req.body;
   
     // Your logic for creating a user
-      res.status(201).json({ message: username });
+      res.status(201).json({ message: 'successfully done debugging!' });
 
   }
+
+  res.status(400).json({error: 'things are bad'})
 }
   
