@@ -2,8 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 // Helper function to allow CORS
 function setCorsHeaders(res: NextApiResponse) {
-  res.setHeader('Access-Control-Allow-Origin', 'https://user-registeration-application.vercel.app'); // Replace with your Angular app's URL
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Origin', 'https://user-registeration-application.vercel.app'), // Replace with your Angular app's URL
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS'),
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 }
 
