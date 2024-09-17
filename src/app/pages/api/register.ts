@@ -28,9 +28,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { username } = req.body;
 
     // Your logic for creating a user
-    res.status(201).json({ message: 'User registered successfully!' });
-  } else {
-    res.setHeader('Allow', ['POST']);
+    if (username !== null) {
+      res.status(201).json({ message: 'User registered successfully!' });}
+  } else {res.setHeader('Allow', ['POST']);
     res.status(405).json({ message: `Method ${req.method} not allowed` });
   }
 }
