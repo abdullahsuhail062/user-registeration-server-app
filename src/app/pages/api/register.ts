@@ -50,7 +50,8 @@ const cors = Cors({
 });
 
 // Helper method to run middleware
-function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: any) {
+function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: (req: NextApiRequest, res: NextApiResponse, result: any) =>any) {
+  
   return new Promise((resolve, reject) => {
     fn(req, res, (result: any) => {
       if (result instanceof Error) {
@@ -60,6 +61,7 @@ function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: any) {
     });
   });
 }
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Run CORS middleware
