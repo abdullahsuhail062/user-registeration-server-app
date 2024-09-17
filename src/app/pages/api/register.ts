@@ -14,6 +14,8 @@ function handleOptionsRequest(req: NextApiRequest, res: NextApiResponse) {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  setCorsHeaders(res);
+
   // Handle preflight (OPTIONS) requests
   if (req.method === 'OPTIONS') {
     handleOptionsRequest(req, res);
@@ -21,7 +23,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Set CORS headers for all other requests
-  setCorsHeaders(res);
 
   // Handle POST request
   if (req.method === 'POST') {
