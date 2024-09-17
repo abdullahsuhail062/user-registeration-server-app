@@ -21,9 +21,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Your logic for creating a user
       res.status(201).json({ message: username });
 
-  } else {
-    
-    res.status(405).json({message : 'this is an error!'})
   }
 }
   
