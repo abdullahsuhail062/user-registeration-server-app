@@ -44,13 +44,13 @@ import Cors from 'cors';
 
 // Initialize CORS middleware
 const cors = Cors({
-  origin: 'https://your-angular-app.vercel.app', // Set the correct origin
+  origin: 'https://user-registeration-application.vercel.app', // Set the correct origin
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 });
 
 // Helper method to run middleware
-function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: Function): any {
+function runMiddleware(req: NextApiRequest, res: NextApiResponse, fn: any) {
   return new Promise((resolve, reject) => {
     fn(req, res, (result: any) => {
       if (result instanceof Error) {
