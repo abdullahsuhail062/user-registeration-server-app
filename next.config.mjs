@@ -4,4 +4,8 @@ const nextConfig = {
   };
   
   export default nextConfig;
+
+  module.exports = {
+    crossOrigin: 'anonymous',
+  }
   
