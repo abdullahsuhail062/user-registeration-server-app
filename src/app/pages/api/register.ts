@@ -1,4 +1,6 @@
+import { error } from 'console';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { ApiError } from 'next/dist/server/api-utils';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // Set CORS headers
@@ -21,7 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   } else {
     
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405).json({error})
   }
 }
   
