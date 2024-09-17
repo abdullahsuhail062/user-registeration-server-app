@@ -21,8 +21,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     // Your logic for creating a user
       res.status(201).json({ message: 'successfully done debugging!' });
 
-  }
+  } else{  res.status(400).json({error: 'things are bad'})
+}
 
-  res.status(400).json({error: 'things are bad'})
 }
   
