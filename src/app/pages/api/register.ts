@@ -15,12 +15,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // Handle POST request
   if (req.method === 'POST') {
     const { username} = req.body;
-
+  
     // Your logic for creating a user
-    if (username === 'Abu Abdullah') {
+    if (username !== null) {
       res.status(201).json({ message: 'User registered successfully' });}
+      
   } else {
     res.setHeader('Allow', ['POST']);
-    res.status(405).json(`Method ${req.method} Not Allowed`);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+  
