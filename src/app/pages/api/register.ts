@@ -22,7 +22,7 @@ const allowCors = (fn: (req: NextApiRequest, res: NextApiResponse) => Promise<vo
 // Example handler function
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
-    const { username } = req.body;
+    const  username  = req.body.username;
 
     // Simple validation and response
     if (username === 'Abu Abdullah') {
