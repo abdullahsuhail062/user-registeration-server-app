@@ -73,11 +73,10 @@ const allowCors = (fn: (req: NextApiRequest, res: NextApiResponse) => Promise<vo
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const {username} = req.body
   if (username ==='Abu Abdullah') {
-    res.status(202).json({message:'username has matched with request!'})
+    res.status(201).json({message:'username has matched with request!'})
     
   }
-  const d = new Date();
-  res.end(d.toString());
+ 
 };
 
 // Export the handler wrapped with CORS handling
