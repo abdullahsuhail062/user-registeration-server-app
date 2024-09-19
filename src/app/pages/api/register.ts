@@ -1,6 +1,5 @@
 
 
-import NextCors from 'cors';
 
    // Run the cors middleware
    // nextjs-cors uses the cors package, so we invite you to check the documentation https://github.com/expressjs/cors
