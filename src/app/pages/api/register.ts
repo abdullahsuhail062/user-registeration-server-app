@@ -36,6 +36,5 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 };
-
 // Export the handler wrapped with CORS handling
 export default allowCors(handler);
