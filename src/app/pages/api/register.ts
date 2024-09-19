@@ -1,11 +1,14 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
+
 // Helper function to allow CORS
 function setCorsHeaders(res: NextApiResponse) {
   res.setHeader('Access-Control-Allow-Origin', '*') // Replace with your Angular app's URL
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 }
+
+
 
 // Middleware function for handling OPTIONS requests (preflight)
 function handleOptionsRequest(req: NextApiRequest, res: NextApiResponse) {
@@ -14,7 +17,6 @@ function handleOptionsRequest(req: NextApiRequest, res: NextApiResponse) {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  setCorsHeaders(res);
 
   // Handle preflight (OPTIONS) requests
   if (req.method === 'OPTIONS') {
@@ -35,6 +37,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(405).json({ message: `Method ${req.method} not allowed` });
   }
 }
+
+
+
 
 
 
