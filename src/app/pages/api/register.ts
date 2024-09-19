@@ -21,9 +21,15 @@ const allowCors = (fn: (req: NextApiRequest, res: NextApiResponse) => Promise<vo
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const {username} = req.body
+    if (!username || typeof username !== 'string') {
+      return res.status(400).json({ error: 'Invalid username' });
+    }
+
+    // Example response logic
     if (username === 'Abu Abdullah') {
-      res.status(201).json({message: 'request is made successfully'})
-      
+      return res.status(201).json({ message: `Welcome, ${username}!` });
+    } else {
+      return res.status(400).json({ error: 'Invalid username provided' });
     }
   } else {
     // Method not allowed
