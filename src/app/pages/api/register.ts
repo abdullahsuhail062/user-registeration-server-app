@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 // Define the type for the allowCors function
 const allowCors = (fn: (req: NextApiRequest, res: NextApiResponse) => Promise<void>) => async (req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', 'https://user-registeration-application.vercel.app');  // Update with your Angular app's URL
+  res.setHeader('Access-Control-Allow-Origin', 'https//user-registeration-application.vercel.app');  // Update with your Angular app's URL
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
   res.setHeader(
     'Access-Control-Allow-Headers',
