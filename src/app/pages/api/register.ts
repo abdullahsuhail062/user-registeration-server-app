@@ -52,7 +52,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 // Define the type for the allowCors function
 const allowCors = (fn: (req: NextApiRequest, res: NextApiResponse) => Promise<void>) => async (req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://user-registeration-application.vercel.app');
   // You can also dynamically set the origin using the request origin
   // res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
@@ -71,6 +71,11 @@ const allowCors = (fn: (req: NextApiRequest, res: NextApiResponse) => Promise<vo
 
 // Example handler function
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const {username} = req.body
+  if (username ==='Abu Abdullah') {
+    res.status(202).json({message:'username has matched with request!'})
+    
+  }
   const d = new Date();
   res.end(d.toString());
 };
